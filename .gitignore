@@ -1,4 +1,11 @@
-# Byte-compiled / optimized / DLL files
+# Kaggle data (never upload)
+data/
+
+# Mac + Jupyter
+.DS_Store
+.ipynb_checkpoints/
+
+Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
