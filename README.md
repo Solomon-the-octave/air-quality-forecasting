@@ -68,18 +68,6 @@ Sequential([
     Dense(1)
 ])
 
-air-quality-forecasting/
-├── notebooks/
-│   └── air_quality_forecasting.ipynb
-├── outputs/
-│   ├── experiment_results.csv
-│   └── submission.csv
-├── README.md
-└── requirements.txt
 
-git clone https://github.com/Solomon-the-octave/air-quality-forecasting
-cd air-quality-forecasting
-
-pip install -r requirements.txt
 
 
