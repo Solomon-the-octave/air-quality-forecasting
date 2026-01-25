@@ -76,7 +76,7 @@ Sequential([
 - **Adam optimizer:** Ensures stable and efficient convergence for time-series regression  
 
 ---
-
+```
 ## Project Structure
 
 ```text
@@ -88,5 +88,47 @@ air-quality-forecasting/
 │   └── submission.csv
 ├── README.md
 └── requirements.txt
+```
+#Installation and Usage
 
 
+1. Clone the Repository
+   
+git clone https://github.com/Solomon-the-octave/air-quality-forecasting
+cd air-quality-forecasting
+
+3. Install Dependencies
+   
+pip install -r requirements.txt
+
+4. Run the Notebook
+
+Open air_quality_forecasting.ipynb in Google Colab or Jupyter Notebook and execute the cells sequentially to reproduce:
+
+Data loading and preprocessing
+
+Feature sequencing using sliding windows
+
+Model training and validation
+
+Prediction generation and Kaggle submission
+
+Future Work
+
+Explore Bidirectional LSTM and attention-based architectures
+
+Integrate external meteorological variables (e.g., temperature, wind speed)
+
+Engineer lag features and rolling statistics
+
+Apply Bayesian hyperparameter optimization
+
+Extend to multi-step forecasting horizons
+
+Author
+
+Wengelawit Ayalew Solomon
+Machine Learning and Data Science Student
+African Leadership University
+
+GitHub: https://github.com/Solomon-the-octave
