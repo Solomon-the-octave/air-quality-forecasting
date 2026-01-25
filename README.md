@@ -68,6 +68,27 @@ Sequential([
     Dense(1)
 ])
 
+## Design Rationale
 
+- **Stacked LSTMs:** Capture short- and medium-term temporal dependencies in PM2.5 concentration patterns  
+- **Moderate window size (48):** Provides the best balance between temporal context and training stability  
+- **Dropout regularization:** Controls overfitting without inducing underfitting  
+- **Adam optimizer:** Ensures stable and efficient convergence for time-series regression  
+
+---
+
+## Project Structure
+
+```text
+air-quality-forecasting/
+├── notebooks/
+│   └── air_quality_forecasting.ipynb
+├── outputs/
+│   ├── experiment_results.csv
+│   └── submission.csv
+├── src/
+│   └── preprocessing.py
+├── README.md
+└── requirements.txt
 
 
