@@ -86,8 +86,6 @@ air-quality-forecasting/
 ├── outputs/
 │   ├── experiment_results.csv
 │   └── submission.csv
-├── src/
-│   └── preprocessing.py
 ├── README.md
 └── requirements.txt
 
