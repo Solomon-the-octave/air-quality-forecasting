@@ -7,15 +7,11 @@ Rather than relying solely on increasing model complexity, the project emphasize
 
 The best-performing model achieved a **public Kaggle leaderboard RMSE of 3638.40**, placing it within the **Proficient** performance range according to the evaluation rubric.
 
----
-
 ## Objectives
 - Predict future PM2.5 concentrations using historical observations  
 - Capture temporal dependencies using **LSTM based recurrent neural networks**  
 - Evaluate the impact of **window size, model capacity, and regularization**  
 - Produce a **reproducible and well-documented** machine learning workflow  
-
----
 
 ## Key Features and Contributions
 
@@ -45,8 +41,6 @@ The best-performing model achieved a **public Kaggle leaderboard RMSE of 3638.40
   - Batch size  
 - Results logged and compared using **validation RMSE**
 
----
-
 ## Results and Performance
 
 | Experiment | Window | LSTM Units | Dense Units | Dropout | Batch Size | Validation RMSE |
@@ -61,8 +55,6 @@ The best-performing model achieved a **public Kaggle leaderboard RMSE of 3638.40
 
 The variation between submissions reflects the **stochastic nature of neural network optimization** and sensitivity to random initialization and early stopping behavior.
 
----
-
 ## Final Model Architecture
 
 ```python
@@ -75,3 +67,19 @@ Sequential([
     Dropout(0.2),
     Dense(1)
 ])
+
+air-quality-forecasting/
+├── notebooks/
+│   └── air_quality_forecasting.ipynb
+├── outputs/
+│   ├── experiment_results.csv
+│   └── submission.csv
+├── README.md
+└── requirements.txt
+
+git clone https://github.com/Solomon-the-octave/air-quality-forecasting
+cd air-quality-forecasting
+
+pip install -r requirements.txt
+
+
