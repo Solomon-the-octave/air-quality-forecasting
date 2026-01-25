@@ -1,13 +1,13 @@
-**PM2.5 Air Quality Forecasting with LSTM Networks
-Overview**
+PM2.5 Air Quality Forecasting with LSTM Networks
+Overview
 
-This project focuses on forecasting PM2.5 air pollution concentrations in Beijing using historical time-series data. It demonstrates how time-aware preprocessing, sequence modeling, and systematic experimentation can significantly improve forecasting accuracy in environmental datasets.
+This project focuses on forecasting PM2.5 air pollution concentrations in Beijing using historical time-series data. It demonstrates how time-aware preprocessing, sliding window sequencing, and systematic experimentation can significantly improve forecasting accuracy for environmental data.
 
-Rather than relying solely on increasing model complexity, the project emphasizes data preprocessing, sliding window design, and controlled hyperparameter tuning as the primary drivers of performance improvement.
+Rather than relying solely on increasing model complexity, the project emphasizes data preprocessing, temporal structure, and controlled hyperparameter tuning as the primary drivers of performance improvement.
 
-The final model achieved a public Kaggle leaderboard RMSE of 3638.40, placing it within the Proficient performance range according to the evaluation rubric.
+The best-performing model achieved a public Kaggle leaderboard RMSE of 3638.40, placing it within the Proficient performance range according to the assignment evaluation rubric.
 
-**Objectives**
+Objectives
 
 Predict future PM2.5 concentrations using historical observations
 
@@ -17,50 +17,50 @@ Evaluate the impact of window size, model capacity, and regularization
 
 Produce a reproducible and well-documented machine learning workflow
 
-**Key Features and Contributions**
+Key Features and Contributions
 Data-Centric Pipeline
 
 Time-series–aware preprocessing to preserve temporal order
 
 Sliding window sequencing for supervised learning
 
-Careful train/validation separation to prevent data leakage
+Time-respecting train/validation splits to prevent data leakage
 
 Robust Preprocessing
 
 Missing values: Forward fill, backward fill, and interpolation
 
-Scaling: Normalization to stabilize model training
+Scaling: Feature normalization to stabilize neural network training
 
-Temporal context: Explicit sequence windowing (12–96 timesteps tested)
+Temporal context: Explicit sequence windowing (12–96 timesteps evaluated)
 
-**Model Architecture**
+Model Architecture
 
 LSTM-based recurrent neural networks
 
-Dropout regularization to reduce overfitting
+Dropout regularization to mitigate overfitting
 
 Dense layers for nonlinear feature transformation
 
 Systematic Experimentation
 
-15+ controlled experiments
+Conducted 15+ controlled experiments
 
-Hyperparameters varied:
+Hyperparameters varied systematically:
 
 Window size
 
-LSTM units
+Number of LSTM units
 
-Dense units
+Dense layer size
 
 Learning rate
 
-Dropout
+Dropout rate
 
 Batch size
 
-**Results logged and compared using validation RMSE**
+Results logged and compared using validation RMSE
 
 Results and Performance
 Experiment	Window	LSTM Units	Dense Units	Dropout	Batch Size	Validation RMSE
@@ -69,13 +69,13 @@ E13	48	128	64	0.2	128	82.53
 E15	96	64	32	0.1	128	83.97
 E16	48	64	64	0.3	128	84.49
 
-Best Kaggle Public Leaderboard RMSE: 3638.40
+Best Kaggle public leaderboard RMSE: 3638.40
 
 Subsequent submission RMSE: 3961.18
 
-The difference between submissions highlights the stochastic nature of neural network optimization and sensitivity to random initialization.
+The variation between submissions reflects the stochastic nature of neural network optimization and sensitivity to random initialization and early stopping behavior.
 
-**Final Model Architecture**
+Final Model Architecture
 Sequential([
     LSTM(128, return_sequences=True, dropout=0.2, input_shape=(window, features)),
     LSTM(64, dropout=0.2),
@@ -86,17 +86,17 @@ Sequential([
     Dense(1)
 ])
 
-**Design Rationale**
+Design Rationale
 
 Stacked LSTMs: Capture short- and medium-term temporal dependencies
 
 Moderate window size (48): Best balance between temporal context and training stability
 
-Dropout: Reduces overfitting without underfitting
+Dropout: Controls overfitting without underfitting
 
 Adam optimizer: Stable convergence for time-series regression
 
-**Project Structure**
+Project Structure
 air-quality-forecasting/
 ├── notebooks/
 │   └── air_quality_forecasting.ipynb
@@ -108,33 +108,31 @@ air-quality-forecasting/
 ├── README.md
 └── requirements.txt
 
-**Installation and Usage**
-Clone the Repository
-git clone https://github.com/Solomon-the-octave/air-quality-forecasting.git
+Installation and Usage
+1. Clone the Repository
+git clone https://github.com/Solomon-the-octave/air-quality-forecasting
 cd air-quality-forecasting
 
-Install Dependencies
+2. Install Dependencies
 pip install -r requirements.txt
 
-Run the Notebook
+3. Run the Notebook
 
 Open air_quality_forecasting.ipynb in Google Colab or Jupyter Notebook and execute the cells sequentially to reproduce:
 
-Data preprocessing
+Data loading and preprocessing
 
 Feature sequencing
 
-Model training
+Model training and validation
 
-Evaluation and prediction
-
-Kaggle submission generation
+Prediction and Kaggle submission generation
 
 Future Work
 
-Explore Bidirectional LSTM and attention mechanisms
+Explore Bidirectional LSTM and attention-based architectures
 
-Integrate external meteorological data
+Integrate external meteorological or emissions data
 
 Engineer lag features and rolling statistics
 
@@ -142,7 +140,7 @@ Apply Bayesian hyperparameter optimization
 
 Extend to multi-step forecasting horizons
 
-**Author**
+Author
 
 Wengelawit Ayalew Solomon
 Machine Learning and Data Science Student
@@ -150,7 +148,7 @@ African Leadership University
 
 GitHub: https://github.com/Solomon-the-octave
 
-**Project Status**
+Project Status
 
 Fully reproducible
 
@@ -158,6 +156,6 @@ Kaggle-validated
 
 Final report completed
 
-GitHub repository finalized
+GitHub repository structured and documented
 
-Kaggle submission screenshot included for verification**
+Kaggle submission screenshot included for verification
